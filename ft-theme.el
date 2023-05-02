@@ -38,7 +38,13 @@
       (tgrey     "#E8EAEE")             ; grey for title area bg or popup
       (sec-bg    "#EFEFF0")             ; for section/bloack area bg
       (dark-blue "#006F9B")             ; ft-dark-blue for doc
-
+      (oxford40  "#0A3866")
+      (oxford50  "#0D4680")             ; slightly lighter oxford
+      (oxford70  "#1470CC")             ; lighter oxford
+      (mint30    "#3D4D45")
+      (mint80    "#A4CCB8")             ; lighter teal for bg
+      (redbg     "#A8352C")             ; red bg used with white fg
+      (bluebg    "#5999B3")             ; blue bg used with white fg
       ;;teriary palette
       ;; Used sparingly, these colors provide contrast for highlighting and messaging.
       (bullet    "#F26638")             ; used for bullet point
@@ -61,31 +67,31 @@
 
   (custom-theme-set-faces
    'ft
-   `(default                       ((((type tty)))
-                                    (((type graphic)) :background ,bg :foreground ,black)))
+   `(default                    ((((type tty)))
+                                 (((type graphic)) :background ,bg :foreground ,black)))
    ;; Basics
-   `(cursor                         ((t (:background ,cur))))
-   `(region                         ((t (:background ,select :extend nil))))
-   `(hl-line                        ((t (:background ,lblue))))
-   `(fringe                         ((t (:background ,bg))))
-   `(show-paren-match               ((t (:background ,cyellow :box (:line-width (-1 . -1) :style nil)))))
-   `(highlight                      ((t (:background ,select :foreground ,black))))
-   `(button                         ((t (:box (:line-width (-1 . -1))))))
-   `(vertical-border                ((t ())))
-   `(italic                         ((t (:slant italic :underline nil))))
-   `(line-number-current-line       ((t (:foreground ,black :background ,hl))))
-   `(completions-common-part        ((t (:bold t))))
-   `(minibuffer-prompt              ((t ())))
-   `(lazy-highlight                 ((t (:foreground ,lh :underline t))))
-   `(compilation-info               ((t ())))
-   `(compilation-warning            ((t ())))
-   `(completions-highlight          ((t ())))
-   `(warning                        ((t ())))
-   `(match                          ((t (:background ,select))))
-   `(secondary-selection            ((t (:background ,lblue :extend nil))))
-   `(help-key-binding               ((t (:bold t))))
-   `(shadow                         ((t (:foreground ,cm))))
-   `(error                          ((t (:foreground ,claret))))
+   `(cursor                      ((t (:background ,cur))))
+   `(region                      ((t (:background ,select :extend nil))))
+   `(hl-line                     ((t (:background ,mint80))))
+   `(fringe                      ((t (:background ,bg))))
+   `(show-paren-match            ((t (:background ,cyellow :box (:line-width (-1 . -1) :style nil)))))
+   `(highlight                   ((t (:background ,select :foreground ,black))))
+   `(button                      ((t (:box (:line-width (-1 . -1) :color ,teal)))))
+   `(vertical-border             ((t ())))
+   `(italic                      ((t (:slant italic :underline nil))))
+   `(line-number-current-line    ((t (:foreground ,black :background ,hl))))
+   `(completions-common-part     ((t (:bold t))))
+   `(minibuffer-prompt           ((t ())))
+   `(lazy-highlight              ((t (:foreground ,lh :underline t))))
+   `(compilation-info            ((t ())))
+   `(compilation-warning         ((t ())))
+   `(completions-highlight       ((t ())))
+   `(warning                     ((t ())))
+   `(match                       ((t (:background ,select))))
+   `(secondary-selection         ((t (:background ,mint80 :extend nil))))
+   `(help-key-binding            ((t (:bold t))))
+   `(shadow                      ((t (:foreground ,cm))))
+   `(error                       ((t (:foreground ,claret))))
    ;; `(window-divider                 ((t (:foreground ,cm))))
    ;; `(window-divider-first-pixel     ((t (:foreground ,cm))))
    ;; `(window-divider-last-pixel      ((t (:foreground ,cm))))
@@ -94,20 +100,25 @@
    ;; ISearch
    `(isearch                        ((t (:background ,select :foreground ,black))))
    `(isearch-fail                   ((t (:background ,rm :foreground ,claret))))
+   `(isearch-group-1                ((t (:background ,redbg :foreground ,white))))
+   `(isearch-group-2                ((t (:background ,bluebg :foreground ,white))))
 
    ;; Font Locks
+   `(font-lock-comment-face           ((t (:foreground ,claret))))
    `(font-lock-comment-delimiter-face ((t (:foreground ,claret))))
+   `(font-lock-delimiter-face         ((t (:foreground "#66605C"))))  ; 70% of black
    `(font-lock-string-face            ((t (:foreground ,teal))))
    `(font-lock-doc-face               ((t (:foreground ,dark-blue))))
+   `(font-lock-bracket-face           ((t (:foreground "#66605C"))))
    `(font-lock-builtin-face           ((t ())))
    `(font-lock-type-face              ((t ())))
    `(font-lock-variable-name-face     ((t ())))
    `(font-lock-keyword-face           ((t ())))
-   `(font-lock-constant-face          ((t (:foreground ,oxford))))
+   `(font-lock-constant-face          ((t (:foreground ,velvet))))
    `(font-lock-function-name-face     ((t (:foreground ,bblue))))
-   `(font-lock-warning-face           ((t ())))
-   `(font-lock-preprocessor-face      ((t ())))
-   `(font-lock-number-face            ((t (:foreground ,oxford))))
+   `(font-lock-warning-face           ((t (:bold t))))
+   `(font-lock-preprocessor-face      ((t (:foreground "#66605C"))))
+   `(font-lock-number-face            ((t (:foreground ,velvet))))
    `(highlight-numbers-number         ((t (:foreground ,oxford))))
 
    ;; shell
@@ -121,14 +132,18 @@
    ;; Mode Line
    `(tab-line                       ((t ())))
    `(mode-line                      ((t (:background ,black :foreground ,paper))))
-   `(mode-line-inactive             ((t (:background ,paper :foreground ,black))))
+   `(mode-line-inactive             ((t (:background ,paper :foreground ,ft-grey))))
    `(header-line                    ((t ())))
    `(header-line-inactive           ((t ())))
 
    ;; Yasnippet
-   `(yas-field-highlight-face       ((t (:underline t))))
+   `(yas-field-highlight-face       ((t (:background ,mint80 :foreground ,black))))
+   `(yascroll:thumb-fringe          ((t (:foreground ,cm :background ,cm))))
+   `(yascroll:thumb-text-area       ((t (:foreground ,cm :background ,cm))))
 
    ;; Company
+   `(company-preview-common            ((t (:inherit default))))
+   `(company-preview-search            ((t (:inherit default))))
    `(company-tooltip-common            ((t ())))
    `(company-tooltip-common-selection  ((t (:bold t :foreground ,white))))
    `(company-tooltip                   ((t (:background ,tgrey))))
@@ -143,8 +158,18 @@
    `(company-tooltip-scrollbar-thumb   ((t (:background ,tgrey))))
    `(company-template-field            ((t (:inherit yas-field-highlight-face))))
 
-   ;; Vertico
-   `(vertico-current  ((t (:background ,lblue))))
+   ;; Cargo
+   `(cargo-process--standard-face      ((t (:inherit default))))
+   `(cargo-process--error-face         ((t (:foreground ,redbg))))
+   `(cargo-process--pointer-face       ((t (:foreground ,bluebg))))
+   `(cargo-process--warning-face       ((t (:foreground ,cyellow))))
+
+   ;; Vertico & Orderless
+   `(vertico-current         ((t (:background ,mint80))))
+   `(orderless-match-face-0  ((t (:foreground ,oxford40))))
+   `(orderless-match-face-1  ((t (:foreground ,claret))))
+   `(orderless-match-face-2  ((t (:foreground ,mint30))))
+   `(orderless-match-face-3  ((t (:foreground ,black))))
 
    ;; Vundo
    `(vundo-highlight  ((t (:foreground ,hl))))
@@ -187,6 +212,11 @@
    `(magit-diff-added-highlight        ((t (:background ,ad))))
    `(magit-diff-context-highlight      ((t (:background ,paper foreground ,black))))
    `(magit-diff-whitespace-warning     ((t (:foreground ,black))))
+   `(magit-reflog-cherry-pick          ((t (:foreground ,teal))))
+   `(magit-reflog-checkout             ((t (:foreground ,teal))))
+   `(magit-reflog-merge                ((t (:foreground ,teal))))
+   `(magit-reflog-other                ((t (:foreground ,oxford70))))
+   `(magit-reflog-remote               ((t (:foreground ,oxford70))))
 
    ;; SMerge
    ;; `(smerge-refined-added           ((t (:background "#253325"))))
@@ -199,21 +229,16 @@
    `(diff-error                     ((t (:foreground ,crimson))))
 
    `(eshell-prompt                  ((t (:bold t))))
+   `(dired-directory                ((t (:foreground ,oxford50))))
 
-   ;; Term
+   ;; Term & Popup
    ;; `(term-color-blue                ((t (:foreground ,blue :background ,blue))))
    ;; `(term-color-green               ((t (:foreground ,green :background ,green))))
    ;; `(term-color-red                 ((t (:foreground ,red :background ,red))))
-   ;;
-   ;; ;; Popup
    ;; `(popup-tip-face                 ((t (:background ,bg+4 :foreground ,fg))))
    ;; `(popup-isearch-match            ((t (:background "#CFA300" :foreground "black"))))
-   ;;
    ;; `(tooltip                        ((t ())))
-   ;; `(dired-directory                ((t (:foreground ,light-purple))))
-   ;; `(web-mode-html-attr-name-face   ((t ())))
-   ;; `(web-mode-html-tag-face         ((t ())))
-   ;;
+
    ;; Emacs Rime
    `(rime-preedit-face              ((t (:underline t))))
    `(rime-cursor-face               ((t (:inherit font-lock-constant-face))))
@@ -272,7 +297,7 @@
    `(flycheck-warning               ((t (:underline (:style wave :color ,hl)))))
    `(flycheck-info                  ((t (:underline (:style wave :color ,cyellow)))))
    `(flycheck-error                 ((t (:underline (:style wave :color ,claret)))))
-   `(flycheck-error-list-info       ((t (:foreground ,black :background ,teal))))
+   `(flycheck-error-list-info       ((t (:foreground ,white :background ,teal))))
    `(flymake-warning                ((t (:underline (:style wave :color ,hl)))))
    `(flymake-error                  ((t (:underline (:style wave :color ,claret)))))
    `(flymake-note                   ((t (:underline (:style wave :color ,cm)))))
@@ -285,73 +310,18 @@
    `(erc-notice-face                ((t (:inherit font-lock-comment-face))))
    `(lsp-modeline-code-actions-face ((t (:foreground ,black))))
    `(lsp-modeline-code-actions-preferred-face ((t (:foreground ,hl))))
-
-
+   ;; tab bar
    `(tab-bar                        ((t (:background ,paper foreground ,black))))
    `(tab-bar-tab                    ((t (:inverse-video t :bold t))))
    `(tab-bar-tab-inactive           ((t ())))
-
    `(ansi-color-blue                ((t (:foreground ,oxford))))
    `(ansi-color-bright-blue         ((t (:foreground ,select))))
-   `(yascroll:thumb-fringe          ((t (:foreground ,cm :background ,cm))))
-   `(yascroll:thumb-text-area       ((t (:foreground ,cm :background ,cm))))
-   `(yas-field-highlight-face       ((t (:foreground ,black background ,tblue))))
    `(embark-keybinding              ((t (:inherit font-lock-constant-face))))
 
    ;; which-key
    `(which-key-command-description-face     ((t :foreground ,oxford)))
    `(which-key-highlighted-command-face     ((t :foreground ,oxford)))
-   `(which-key-local-map-description-face   ((t :foreground ,oxford)))
-
-   ;; Treesitter
-   `(tree-sitter-hl-face:type       ((t ())))
-   `(tree-sitter-hl-face:type.parameter ((t ())))
-   `(tree-sitter-hl-face:type.argument ((t ())))
-   `(tree-sitter-hl-face:type.builtin ((t ())))
-   `(tree-sitter-hl-face:type.super ((t ())))
-   `(tree-sitter-hl-face:constructor ((t ())))
-   `(tree-sitter-hl-face:constant.builtin ((t (:foreground ,oxford))))
-   `(tree-sitter-hl-face:variable ((t ())))
-   `(tree-sitter-hl-face:variable.parameter ((t ())))
-   `(tree-sitter-hl-face:variable.builtin ((t ())))
-   `(tree-sitter-hl-face:variable.special ((t ())))
-   `(tree-sitter-hl-face:property ((t ())))
-   `(tree-sitter-hl-face:property.definition ((t ())))
-   `(tree-sitter-hl-face:comment ((t (:foreground ,claret))))
-   ;;
-   `(tree-sitter-hl-face:doc ((t (:foreground ,dark-blue))))
-   `(tree-sitter-hl-face:string ((t (:foreground ,teal))))
-   ;;
-   `(tree-sitter-hl-face:string.special ((t (:foreground ,teal))))
-   ;;
-   `(tree-sitter-hl-face:escape ((t ())))
-   `(tree-sitter-hl-face:embedded ((t ())))
-   ;;
-   `(tree-sitter-hl-face:keyword ((t ())))
-   ;;
-   `(tree-sitter-hl-face:function ((t (:foreground ,light-blue))))
-   `(tree-sitter-hl-face:function.builtin ((t ())))
-   `(tree-sitter-hl-face:function.call ((t ())))
-   `(tree-sitter-hl-face:function.macro ((t ())))
-   `(tree-sitter-hl-face:function.method ((t ())))
-   `(tree-sitter-hl-face:function.method.call ((t ())))
-   `(tree-sitter-hl-face:function.special ((t ())))
-
-   `(tree-sitter-hl-face:method ((t ())))
-   `(tree-sitter-hl-face:method.call ((t ())))
-   `(tree-sitter-hl-face:operator ((t ())))
-   `(tree-sitter-hl-face:punctuation ((t ())))
-   `(tree-sitter-hl-face:punctuation.bracket ((t (:foreground ,cm))))
-   `(tree-sitter-hl-face:punctuation.delimiter ((t ())))
-   `(tree-sitter-hl-face:punctuation.special ((t ())))
-   ;; dim
-   `(tree-sitter-hl-face:label ((t ())))
-   `(tree-sitter-hl-face:constant ((t ())))
-   `(tree-sitter-hl-face:constant.builtin ((t (:foreground ,velvet))))
-   ;;
-   `(tree-sitter-hl-face:number ((t (:foreground ,velvet))))
-   `(tree-sitter-hl-face:tag ((t ())))
-   `(tree-sitter-hl-face:attribute ((t ())))))
+   `(which-key-local-map-description-face   ((t :foreground ,oxford)))))
 
 (and load-file-name
      (boundp 'custom-theme-load-path)
