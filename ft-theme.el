@@ -56,9 +56,11 @@
 
       ;; lighter variantions of the above, prefiex with `l'
       (lblue     "#DBF1FF")            ; secondary selection, session background
-      (lgreen    "#DBECB6")            ; git added
-      (ad        "#B0D9A0")            ; git added highlit
-      (rm        "#EBB9BC")            ; git removed highlight
+      (adfg      "#00572C")            ; git added text/fg color
+      (adbg      "#CCDFC7")            ; git added bg color
+      (rmfg      "#660A29")            ; git added text/fg color: claret40
+      (rmbg      "#EBC4C3")            ; git removed bg color
+      ;; (rmbg      "#EBB9BC")            ; git removed bg color
       (cm        "#707070")
       (lh        "#0DA59B")
       (cur       "#363636")
@@ -68,7 +70,7 @@
   (custom-theme-set-faces
    'ft
    `(default                    ((((type tty)))
-                                 (((type graphic)) :background ,bg :foreground ,black)))
+                                (((type graphic)) :background ,bg :foreground ,black)))
    ;; Basics
    `(cursor                      ((t (:background ,cur))))
    `(region                      ((t (:background ,select :extend nil))))
@@ -99,7 +101,7 @@
 
    ;; ISearch
    `(isearch                        ((t (:background ,select :foreground ,black))))
-   `(isearch-fail                   ((t (:background ,rm :foreground ,claret))))
+   `(isearch-fail                   ((t (:background ,rmbg :foreground ,claret))))
    `(isearch-group-1                ((t (:background ,redbg :foreground ,white))))
    `(isearch-group-2                ((t (:background ,bluebg :foreground ,white))))
 
@@ -206,10 +208,10 @@
    `(magit-section-highlight           ((t (:background ,lblue))))
    `(magit-section-heading             ((t (:foreground ,oxford))))
    `(magit-section-selection           ((t ())))
-   `(magit-diff-removed                ((t (:background ,rm :foreground "gray50"))))
-   `(magit-diff-removed-highlight      ((t (:background ,rm))))
-   `(magit-diff-added                  ((t (:background ,ad :foreground "gray50"))))
-   `(magit-diff-added-highlight        ((t (:background ,ad))))
+   `(magit-diff-removed                ((t (:background ,rmbg :foreground "gray50"))))
+   `(magit-diff-removed-highlight      ((t (:background ,rmbg :foreground ,rmfg))))
+   `(magit-diff-added                  ((t (:background ,adbg :foreground "gray50"))))
+   `(magit-diff-added-highlight        ((t (:background ,adbg :foreground ,adfg))))
    `(magit-diff-context-highlight      ((t (:background ,paper foreground ,black))))
    `(magit-diff-whitespace-warning     ((t (:foreground ,black))))
    `(magit-reflog-cherry-pick          ((t (:foreground ,teal))))
