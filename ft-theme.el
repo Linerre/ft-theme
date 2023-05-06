@@ -41,8 +41,7 @@
       (oxford40  "#0A3866")
       (oxford50  "#0D4680")             ; slightly lighter oxford
       (oxford70  "#1470CC")             ; lighter oxford
-      (mint30    "#3D4D45")
-      (mint80    "#A4CCB8")             ; lighter teal for bg
+      (teal20    "#B6CCC7")             ; 30% teal
       (redbg     "#A8352C")             ; red bg used with white fg
       (bluebg    "#5999B3")             ; blue bg used with white fg
       ;;teriary palette
@@ -55,12 +54,11 @@
       (crimson   "#CC0000")             ; high-contrast red
 
       ;; lighter variantions of the above, prefiex with `l'
-      (lblue     "#DBF1FF")            ; secondary selection, session background
+      (sky70     "#E0EAF5")            ; secondary selection, session background
       (adfg      "#00572C")            ; git added text/fg color
       (adbg      "#CCDFC7")            ; git added bg color
       (rmfg      "#660A29")            ; git added text/fg color: claret40
       (rmbg      "#EBC4C3")            ; git removed bg color
-      ;; (rmbg      "#EBB9BC")            ; git removed bg color
       (cm        "#707070")
       (lh        "#0DA59B")
       (cur       "#363636")
@@ -74,7 +72,7 @@
    ;; Basics
    `(cursor                      ((t (:background ,cur))))
    `(region                      ((t (:background ,select :extend nil))))
-   `(hl-line                     ((t (:background ,mint80))))
+   `(hl-line                     ((t (:background ,teal20))))
    `(fringe                      ((t (:background ,bg))))
    `(show-paren-match            ((t (:background ,cyellow :box (:line-width (-1 . -1) :style nil)))))
    `(highlight                   ((t (:background ,select :foreground ,black))))
@@ -90,7 +88,7 @@
    `(completions-highlight       ((t ())))
    `(warning                     ((t ())))
    `(match                       ((t (:background ,select))))
-   `(secondary-selection         ((t (:background ,mint80 :extend nil))))
+   `(secondary-selection         ((t (:background ,teal20 :extend nil))))
    `(help-key-binding            ((t (:bold t))))
    `(shadow                      ((t (:foreground ,cm))))
    `(error                       ((t (:foreground ,claret))))
@@ -139,7 +137,7 @@
    `(header-line-inactive           ((t ())))
 
    ;; Yasnippet
-   `(yas-field-highlight-face       ((t (:background ,mint80 :foreground ,black))))
+   `(yas-field-highlight-face       ((t (:background ,teal20 :foreground ,black))))
    `(yascroll:thumb-fringe          ((t (:foreground ,cm :background ,cm))))
    `(yascroll:thumb-text-area       ((t (:foreground ,cm :background ,cm))))
 
@@ -164,13 +162,13 @@
    `(cargo-process--standard-face      ((t (:inherit default))))
    `(cargo-process--error-face         ((t (:foreground ,redbg))))
    `(cargo-process--pointer-face       ((t (:foreground ,bluebg))))
-   `(cargo-process--warning-face       ((t (:foreground ,cyellow))))
+   `(cargo-process--warning-face       ((t (:foreground "#615440"))))
 
    ;; Vertico & Orderless
-   `(vertico-current         ((t (:background ,mint80))))
+   `(vertico-current         ((t (:background ,teal20))))
    `(orderless-match-face-0  ((t (:foreground ,oxford40))))
    `(orderless-match-face-1  ((t (:foreground ,claret))))
-   `(orderless-match-face-2  ((t (:foreground ,mint30))))
+   `(orderless-match-face-2  ((t (:foreground ,teal20))))
    `(orderless-match-face-3  ((t (:foreground ,black))))
 
    ;; Vundo
@@ -311,7 +309,7 @@
    `(erc-timestamp-face             ((t (:inherit font-lock-constant-face))))
    `(erc-notice-face                ((t (:inherit font-lock-comment-face))))
    `(lsp-modeline-code-actions-face ((t (:foreground ,black))))
-   `(lsp-modeline-code-actions-preferred-face ((t (:foreground ,hl))))
+   `(lsp-modeline-code-actions-preferred-face ((t (:foreground ,teal))))
    ;; tab bar
    `(tab-bar                        ((t (:background ,paper foreground ,black))))
    `(tab-bar-tab                    ((t (:inverse-video t :bold t))))
