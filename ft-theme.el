@@ -54,11 +54,13 @@
       (crimson   "#CC0000")             ; high-contrast red
 
       ;; lighter variantions of the above, prefiex with `l'
-      (sky70     "#E0EAF5")            ; secondary selection, session background
+      (ghblue    "#DFF7FF")            ; secondary selection, session background
       (adfg      "#00572C")            ; git added text/fg color
       (adbg      "#CCDFC7")            ; git added bg color
       (rmfg      "#660A29")            ; git added text/fg color: claret40
       (rmbg      "#EBC4C3")            ; git removed bg color
+      (ghad      "#E6FFEC")            ; github add bg
+      (ghrm      "#FFF0EE")            ; github rm bg
       (cm        "#707070")
       (lh        "#0DA59B")
       (cur       "#363636")
