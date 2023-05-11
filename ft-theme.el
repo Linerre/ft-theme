@@ -110,7 +110,7 @@
    `(font-lock-comment-delimiter-face ((t (:foreground ,claret))))
    `(font-lock-delimiter-face         ((t (:foreground "#66605C"))))  ; 70% of black
    `(font-lock-string-face            ((t (:foreground ,teal))))
-   `(font-lock-doc-face               ((t (:foreground ,dark-blue))))
+   `(font-lock-doc-face               ((t (:foreground ,oxford))))
    `(font-lock-bracket-face           ((t (:foreground "#66605C"))))
    `(font-lock-builtin-face           ((t ())))
    `(font-lock-type-face              ((t ())))
@@ -205,7 +205,7 @@
    `(magit-header-line                 ((t ())))
    `(magit-head                        ((t ())))
    `(magit-tag                         ((t (:foreground ,cm))))
-   `(magit-section-highlight           ((t (:background ,lblue))))
+   `(magit-section-highlight           ((t (:background ,ghblue))))
    `(magit-section-heading             ((t (:foreground ,oxford))))
    `(magit-section-selection           ((t ())))
    `(magit-diff-removed                ((t (:background ,rmbg :foreground "gray50"))))
@@ -296,6 +296,7 @@
    `(parenthesis                    ((t (:foreground ,cm))))
    `(eldoc-box-body                 ((t (:background ,tgrey :inherit default))))
 
+   `(flycheck-fringe-warning        ((t (:foreground ,cyellow))))
    `(flycheck-warning               ((t (:underline (:style wave :color ,hl)))))
    `(flycheck-info                  ((t (:underline (:style wave :color ,cyellow)))))
    `(flycheck-error                 ((t (:underline (:style wave :color ,claret)))))
