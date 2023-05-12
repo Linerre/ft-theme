@@ -289,8 +289,6 @@
    `(org-block-begin-line      ((t (:foreground ,white :background ,sgrey :family "Monospace" :font "Monospace" :bold t :extend t))))
    `(org-block-end-line        ((t (:foreground ,white :background ,sgrey :family "Monospace" :font "Monospace" :bold t :extend t))))
 
-   ;; Treemacs
-   ;; `(treemacs-root-face             ((t (:inherit font-lock-function-name-face :height 1.4 :underline t))))
    `(fill-column-indicator          ((t (:foreground ,cm))))
    `(scroll-bar                     ((t (:foreground ,black))))
    `(parenthesis                    ((t (:foreground ,cm))))
