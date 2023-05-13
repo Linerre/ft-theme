@@ -110,18 +110,18 @@
    `(font-lock-comment-delimiter-face ((t (:foreground ,claret))))
    `(font-lock-delimiter-face         ((t (:foreground "#66605C"))))  ; 70% of black
    `(font-lock-string-face            ((t (:foreground ,teal))))
-   `(font-lock-doc-face               ((t (:foreground ,oxford))))
+   `(font-lock-doc-face               ((t (:foreground ,bblue))))
    `(font-lock-bracket-face           ((t (:foreground "#66605C"))))
    `(font-lock-builtin-face           ((t ())))
    `(font-lock-type-face              ((t ())))
    `(font-lock-variable-name-face     ((t ())))
    `(font-lock-keyword-face           ((t ())))
    `(font-lock-constant-face          ((t (:foreground ,velvet))))
-   `(font-lock-function-name-face     ((t (:foreground ,bblue))))
+   `(font-lock-function-name-face     ((t (:foreground ,oxford))))
    `(font-lock-warning-face           ((t (:bold t))))
    `(font-lock-preprocessor-face      ((t (:foreground "#66605C"))))
    `(font-lock-number-face            ((t (:foreground ,velvet))))
-   `(highlight-numbers-number         ((t (:foreground ,oxford))))
+   `(highlight-numbers-number         ((t (:foreground ,velvet))))
 
    ;; shell
    `(sh-quoted-exec             ((t ())))
