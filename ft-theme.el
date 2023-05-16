@@ -44,6 +44,11 @@
       (teal20    "#B6CCC7")             ; 30% teal
       (redbg     "#A8352C")             ; red bg used with white fg
       (bluebg    "#5999B3")             ; blue bg used with white fg
+
+      (shdblue   "#2E6389")             ; section dark blue bg used with fg below
+      (shyellow  "#FFFDE8")
+      (shlblue   "#B6CEDF")             ; section light blue bg used with fg bleow
+      (shblack   "#231F20")
       ;;teriary palette
       ;; Used sparingly, these colors provide contrast for highlighting and messaging.
       (bullet    "#F26638")             ; used for bullet point
@@ -84,7 +89,7 @@
    `(line-number-current-line    ((t (:foreground ,black :background ,hl))))
    `(completions-common-part     ((t (:bold t))))
    `(minibuffer-prompt           ((t ())))
-   `(lazy-highlight              ((t (:background ,teal :foreground ,white))))
+   `(lazy-highlight              ((t (:foreground ,lh :underline t))))
    `(compilation-info            ((t ())))
    `(compilation-warning         ((t ())))
    `(completions-highlight       ((t ())))
@@ -282,7 +287,8 @@
    `(org-level-5               ((t ())))
    `(org-level-6               ((t ())))
    `(org-level-7               ((t ())))
-   `(org-code                  ((t (:background ,sec-bg :foreground ,crimson))))
+   `(org-todo                  ((t (:foreground ,crimson :bold t))))
+   `(org-code                  ((t (:background ,shlblue :foreground ,shblack))))
    `(org-block                 ((t ())))
    `(org-quote                 ((t (:extend t))))
    `(org-verse                 ((t (:extend t))))
