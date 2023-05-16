@@ -84,7 +84,7 @@
    `(line-number-current-line    ((t (:foreground ,black :background ,hl))))
    `(completions-common-part     ((t (:bold t))))
    `(minibuffer-prompt           ((t ())))
-   `(lazy-highlight              ((t (:foreground ,lh :underline t))))
+   `(lazy-highlight              ((t (:background ,teal :foreground ,white))))
    `(compilation-info            ((t ())))
    `(compilation-warning         ((t ())))
    `(completions-highlight       ((t ())))
