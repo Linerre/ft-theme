@@ -24,7 +24,8 @@
       (oxford    "#0F5499")             ; ft-blue
       (slate     "#262A33")             ; ft-dark-grey
       (paper     "#FFF1E5")             ; ft-paper-background
-      (bg        "#FAF7F5")             ; ft-paper but more white
+      ;; (bg        "#FAF7F5")             ; ft-paper but more white
+      (bg        "#EEEEEC")             ; ft-paper but more white
       ;; from ft print
       (tblue     "#004D6D")             ; top blue in graphics
       (mblue     "#95BFC5")             ; middle blue in graphics
