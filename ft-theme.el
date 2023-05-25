@@ -280,7 +280,6 @@
    ;; Org-mode
    `(org-document-title        ((t (:bold t :height ,(nth 0 theme-header-scale)))))
    `(org-link                  ((t (:foreground ,sblue :underline t))))
-   `(org-code                  ((t (:inherit font-lock-constant-face))))
    `(org-level-1               ((t (:foreground ,black :bold t))))
    `(org-level-2               ((t (:foreground ,black))))
    `(org-level-3               ((t (:foreground ,cm))))
