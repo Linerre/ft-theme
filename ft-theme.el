@@ -93,6 +93,7 @@
    `(lazy-highlight              ((t (:foreground ,lh :underline t))))
    `(compilation-info            ((t ())))
    `(compilation-warning         ((t ())))
+   `(compilation-column-number   ((t ())))
    `(completions-highlight       ((t ())))
    `(warning                     ((t ())))
    `(match                       ((t (:background ,select))))
