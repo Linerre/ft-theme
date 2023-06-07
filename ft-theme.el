@@ -35,7 +35,8 @@
       (hblue     "#1479A1")             ; high contrast blue used for banner; fg should be white
       (cyellow   "#D3B73F")             ; yellow used in comparision with blue
       (sgrey     "#929397")             ; grey used for section header bg
-      (select    "#E6E9E4")             ; 20% of light-blue
+      ;; (select    "#E6E9E4")             ; 20% of light-blue
+      (select    "#CCE1E3")             ; 30% of light-blue
       (tgrey     "#E8EAEE")             ; grey for title area bg or popup
       (sec-bg    "#EFEFF0")             ; for section/bloack area bg
       (dark-blue "#006F9B")             ; ft-dark-blue for doc
