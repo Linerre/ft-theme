@@ -24,7 +24,6 @@
       (oxford    "#0F5499")             ; ft-blue
       (slate     "#262A33")             ; ft-dark-grey
       (paper     "#FFF1E5")             ; ft-paper-background
-      ;; (bg        "#FAF7F5")             ; ft-paper but more white
       (bg        "#EEEEEC")             ; ft-paper but more white
       ;; from ft print
       (tblue     "#004D6D")             ; top blue in graphics
@@ -36,14 +35,13 @@
       (cyellow   "#D3B73F")             ; yellow used in comparision with blue
       (sgrey     "#929397")             ; grey used for section header bg
       (select    "#B6CCC7")             ; 40% of teal
-      ;; (select    "#E6E9E4")             ; 20% of light-blue
+      (ssel      "#B3D9E3")             ; 40% of light-blue for secondary selection
       (tgrey     "#E8EAEE")             ; grey for title area bg or popup
       (sec-bg    "#EFEFF0")             ; for section/bloack area bg
       (dark-blue "#006F9B")             ; ft-dark-blue for doc
       (oxford40  "#0A3866")
       (oxford50  "#0D4680")             ; slightly lighter oxford
       (oxford70  "#1470CC")             ; lighter oxford
-      (teal20    "#B6CCC7")             ; 30% teal
       (redbg     "#A8352C")             ; red bg used with white fg
       (bluebg    "#5999B3")             ; blue bg used with white fg
 
@@ -81,7 +79,7 @@
    ;; Basics
    `(cursor                      ((t (:background ,cur))))
    `(region                      ((t (:background ,select :extend nil))))
-   `(hl-line                     ((t (:background ,teal20))))
+   `(hl-line                     ((t (:background ,ssel))))
    `(fringe                      ((t (:background ,bg))))
    `(show-paren-match            ((t (:background ,cyellow :box (:line-width (-1 . -1) :style nil)))))
    `(highlight                   ((t (:background ,select :foreground ,black))))
@@ -98,7 +96,7 @@
    `(completions-highlight       ((t ())))
    `(warning                     ((t ())))
    `(match                       ((t (:background ,select))))
-   `(secondary-selection         ((t (:background ,teal20 :extend nil))))
+   `(secondary-selection         ((t (:background ,ssel :extend nil))))
    `(help-key-binding            ((t (:bold t))))
    `(shadow                      ((t (:foreground ,cm))))
    `(error                       ((t (:foreground ,claret))))
@@ -147,7 +145,7 @@
    `(header-line-inactive           ((t ())))
 
    ;; Yasnippet
-   `(yas-field-highlight-face       ((t (:background ,teal20 :foreground ,black))))
+   `(yas-field-highlight-face       ((t (:background ,ssel :foreground ,black))))
    `(yascroll:thumb-fringe          ((t (:foreground ,cm :background ,cm))))
    `(yascroll:thumb-text-area       ((t (:foreground ,cm :background ,cm))))
 
@@ -175,10 +173,10 @@
    `(cargo-process--warning-face       ((t (:foreground "#615440"))))
 
    ;; Vertico & Orderless
-   `(vertico-current         ((t (:background ,teal20))))
+   `(vertico-current         ((t (:background ,ssel))))
    `(orderless-match-face-0  ((t (:foreground ,oxford40))))
    `(orderless-match-face-1  ((t (:foreground ,claret))))
-   `(orderless-match-face-2  ((t (:foreground ,teal20))))
+   `(orderless-match-face-2  ((t (:foreground ,ssel))))
    `(orderless-match-face-3  ((t (:foreground ,black))))
 
    ;; Vundo
