@@ -13,6 +13,7 @@
 
 (let (;; primary
       (black     "#000000")             ; fg
+      (black70   "#4D4845")
       (white     "#FFFFFF")             ; bg
       (ft-pink   "#FCD0B1")             ; darker bg that paper below
       (ft-grey   "#333333")
@@ -121,7 +122,7 @@
    `(font-lock-builtin-face           ((t ())))
    `(font-lock-type-face              ((t ())))
    `(font-lock-variable-name-face     ((t ())))
-   `(font-lock-keyword-face           ((t ())))
+   `(font-lock-keyword-face           ((t (:foreground ,black70))))
    `(font-lock-constant-face          ((t (:foreground ,velvet))))
    `(font-lock-function-name-face     ((t (:foreground ,oxford))))
    `(font-lock-warning-face           ((t (:bold t))))
