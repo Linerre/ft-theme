@@ -27,36 +27,26 @@
       (paper     "#FFF1E5")             ; ft-paper-background
       (bg        "#EEEEEC")             ; ft-paper but more white
       ;; from ft print
-      (tblue     "#004D6D")             ; top blue in graphics
-      (mblue     "#95BFC5")             ; middle blue in graphics
       (bblue     "#0783BA")             ; bottom blue in graphics
       (sblue     "#66A1C6")             ; blue used for section title
-      (cblue     "#3B6A90")             ; blue used in comparision with yellow
       (hblue     "#1479A1")             ; high contrast blue used for banner; fg should be white
       (cyellow   "#D3B73F")             ; yellow used in comparision with blue
       (sgrey     "#929397")             ; grey used for section header bg
       (select    "#B6CCC7")             ; 40% of teal
       (ssel      "#B3D9E3")             ; 40% of light-blue for secondary selection
       (tgrey     "#E8EAEE")             ; grey for title area bg or popup
-      (sec-bg    "#EFEFF0")             ; for section/bloack area bg
-      (dark-blue "#006F9B")             ; ft-dark-blue for doc
       (oxford40  "#0A3866")
       (oxford50  "#0D4680")             ; slightly lighter oxford
       (oxford70  "#1470CC")             ; lighter oxford
       (redbg     "#A8352C")             ; red bg used with white fg
       (bluebg    "#5999B3")             ; blue bg used with white fg
-
-      (shdblue   "#2E6389")             ; section dark blue bg used with fg below
-      (shyellow  "#FFFDE8")
       (shlblue   "#B6CEDF")             ; section light blue bg used with fg bleow
       (shblack   "#231F20")
       ;;teriary palette
       ;; Used sparingly, these colors provide contrast for highlighting and messaging.
       (bullet    "#F26638")             ; used for bullet point
       (light-blue "#00A0DD")
-      (wheat     "#F2DFCE")             ; alternative bg
       (velvet    "#593380")             ; purple
-      (sky       "#CCE6FF")             ; very pale blue
       (crimson   "#CC0000")             ; high-contrast red
 
       ;; lighter variantions of the above, prefiex with `l'
@@ -65,8 +55,6 @@
       (adbg      "#CCDFC7")            ; git added bg color
       (rmfg      "#660A29")            ; git added text/fg color: claret40
       (rmbg      "#EBC4C3")            ; git removed bg color
-      (ghad      "#E6FFEC")            ; github add bg
-      (ghrm      "#FFF0EE")            ; github rm bg
       (cm        "#707070")
       (lh        "#0DA59B")
       (cur       "#363636")
@@ -330,7 +318,56 @@
    ;; which-key
    `(which-key-command-description-face     ((t :foreground ,oxford)))
    `(which-key-highlighted-command-face     ((t :foreground ,oxford)))
-   `(which-key-local-map-description-face   ((t :foreground ,oxford)))))
+   `(which-key-local-map-description-face   ((t :foreground ,oxford)))
+
+    ;; Treesitter
+   `(tree-sitter-hl-face:type       ((t ())))
+   `(tree-sitter-hl-face:type.parameter ((t ())))
+   `(tree-sitter-hl-face:type.argument ((t ())))
+   `(tree-sitter-hl-face:type.builtin ((t ())))
+   `(tree-sitter-hl-face:type.super ((t ())))
+   `(tree-sitter-hl-face:constructor ((t ())))
+   `(tree-sitter-hl-face:variable ((t ())))
+   `(tree-sitter-hl-face:variable.parameter ((t ())))
+   `(tree-sitter-hl-face:variable.builtin ((t ())))
+   `(tree-sitter-hl-face:variable.special ((t ())))
+   `(tree-sitter-hl-face:property ((t ())))
+   `(tree-sitter-hl-face:property.definition ((t ())))
+   `(tree-sitter-hl-face:comment ((t (:foreground ,claret))))
+   ;;
+   `(tree-sitter-hl-face:doc ((t (:foreground ,doc))))
+   `(tree-sitter-hl-face:string ((t (:foreground ,teal))))
+   ;;
+   `(tree-sitter-hl-face:string.special ((t (:foreground ,teal))))
+   ;;
+   `(tree-sitter-hl-face:escape ((t ())))
+   `(tree-sitter-hl-face:embedded ((t ())))
+   ;;
+   `(tree-sitter-hl-face:keyword ((t ())))
+   ;;
+   `(tree-sitter-hl-face:function ((t (:foreground ,oxford))))
+   `(tree-sitter-hl-face:function.builtin ((t ())))
+   `(tree-sitter-hl-face:function.call ((t ())))
+   `(tree-sitter-hl-face:function.macro ((t (:foreground ,velvet))))
+   `(tree-sitter-hl-face:function.method ((t ())))
+   `(tree-sitter-hl-face:function.method.call ((t ())))
+   `(tree-sitter-hl-face:function.special ((t ())))
+
+   `(tree-sitter-hl-face:method ((t ())))
+   `(tree-sitter-hl-face:method.call ((t ())))
+   `(tree-sitter-hl-face:operator ((t ())))
+   `(tree-sitter-hl-face:punctuation ((t ())))
+   `(tree-sitter-hl-face:punctuation.bracket ((t (:foreground ,cm))))
+   `(tree-sitter-hl-face:punctuation.delimiter ((t ())))
+   `(tree-sitter-hl-face:punctuation.special ((t ())))
+   ;; dim
+   `(tree-sitter-hl-face:label ((t ())))
+   `(tree-sitter-hl-face:constant ((t ())))
+   `(tree-sitter-hl-face:constant.builtin ((t (:foreground ,velvet))))
+   ;;
+   `(tree-sitter-hl-face:number ((t (:foreground ,velvet))))
+   `(tree-sitter-hl-face:tag ((t ())))
+   `(tree-sitter-hl-face:attribute ((t ())))))
 
 (and load-file-name
      (boundp 'custom-theme-load-path)
