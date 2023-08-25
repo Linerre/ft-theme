@@ -12,9 +12,9 @@
   "Scales for headers.")
 
 (let (;; primary
-      (black     "#000000")             ; fg
-      (black70   "#4D4845")
       (white     "#FFFFFF")             ; bg
+      (black     "#000000")
+      (black70   "#4D4845")
       (ft-pink   "#FCD0B1")             ; darker bg that paper below
       (ft-grey   "#333333")
 
@@ -26,6 +26,8 @@
       (slate     "#262A33")             ; ft-dark-grey
       (paper     "#FFF1E5")             ; ft-paper-background
       (bg        "#EEEEEC")             ; ft-paper but more white
+      (crimson   "#CC0000")             ;
+      (matisse   "#355778")
       ;; from ft print
       (bblue     "#0783BA")             ; bottom blue in graphics
       (sblue     "#66A1C6")             ; blue used for section title
@@ -40,7 +42,7 @@
       (oxford70  "#1470CC")             ; lighter oxford
       (redbg     "#A8352C")             ; red bg used with white fg
       (bluebg    "#5999B3")             ; blue bg used with white fg
-      (shlblue   "#B6CEDF")             ; section light blue bg used with fg bleow
+      (shblue    "#B6CEDF")             ; section light blue bg used with fg bleow
       (shblack   "#231F20")
       ;;teriary palette
       ;; Used sparingly, these colors provide contrast for highlighting and messaging.
@@ -64,7 +66,7 @@
   (custom-theme-set-faces
    'ft
    `(default                    ((((type tty)))
-                                (((type graphic)) :background ,bg :foreground ,black)))
+                                (((type graphic)) :background ,bg :foreground ,black70)))
    ;; Basics
    `(cursor                      ((t (:background ,cur))))
    `(region                      ((t (:background ,select :extend nil))))
@@ -110,7 +112,7 @@
    `(font-lock-builtin-face           ((t ())))
    `(font-lock-type-face              ((t ())))
    `(font-lock-variable-name-face     ((t ())))
-   `(font-lock-keyword-face           ((t (:foreground ,black70))))
+   `(font-lock-keyword-face           ((t (:foreground ,black))))
    `(font-lock-constant-face          ((t (:foreground ,velvet))))
    `(font-lock-function-name-face     ((t (:foreground ,oxford))))
    `(font-lock-warning-face           ((t (:bold t))))
@@ -266,6 +268,14 @@
    `(telega-msg-self-title          ((t (:foreground ,light-blue))))
    `(telega-unmuted-count           ((t ())))
 
+   ;; LaTeX
+   `(font-latex-sectioning-1-face ((t (:inherit default))))
+   `(font-latex-sectioning-2-face ((t (:inherit default))))
+   `(font-latex-sectioning-3-face ((t (:inherit default))))
+   `(font-latex-sectioning-4-face ((t (:inherit default))))
+   `(font-latex-sectioning-5-face ((t (:inherit default))))
+   `(font-latex-warning-face      ((t (:foreground ,crimson))))
+
    ;; Org-mode
    `(org-document-title        ((t (:bold t :height ,(nth 0 theme-header-scale)))))
    `(org-link                  ((t (:foreground ,sblue :underline t))))
@@ -277,8 +287,10 @@
    `(org-level-6               ((t ())))
    `(org-level-7               ((t ())))
    `(org-todo                  ((t (:foreground ,crimson :bold t))))
-   `(org-code                  ((t (:background ,shlblue :foreground ,shblack))))
    `(org-block                 ((t ())))
+   `(org-code                  ((t (:background ,shblue :foreground ,shblack))))
+   `(org-property-value        ((t (:inherit nil))))
+   `(org-drawer                ((t (:foreground ,matisse))))
    `(org-quote                 ((t (:extend t))))
    `(org-verse                 ((t (:extend t))))
    `(org-block-begin-line      ((t (:foreground ,white :background ,sgrey :family "Monospace" :font "Monospace" :bold t :extend t))))
@@ -305,7 +317,7 @@
    `(erc-input-face                 ((t (:inherit font-lock-function-name-face))))
    `(erc-timestamp-face             ((t (:inherit font-lock-constant-face))))
    `(erc-notice-face                ((t (:inherit font-lock-comment-face))))
-   `(lsp-modeline-code-actions-face ((t (:foreground ,black))))
+   `(lsp-modeline-code-actions-face ((t (:eground ,black))))
    `(lsp-modeline-code-actions-preferred-face ((t (:foreground ,teal))))
    ;; tab bar
    `(tab-bar                        ((t (:background ,paper foreground ,black))))
@@ -318,56 +330,7 @@
    ;; which-key
    `(which-key-command-description-face     ((t :foreground ,oxford)))
    `(which-key-highlighted-command-face     ((t :foreground ,oxford)))
-   `(which-key-local-map-description-face   ((t :foreground ,oxford)))
-
-    ;; Treesitter
-   `(tree-sitter-hl-face:type       ((t ())))
-   `(tree-sitter-hl-face:type.parameter ((t ())))
-   `(tree-sitter-hl-face:type.argument ((t ())))
-   `(tree-sitter-hl-face:type.builtin ((t ())))
-   `(tree-sitter-hl-face:type.super ((t ())))
-   `(tree-sitter-hl-face:constructor ((t ())))
-   `(tree-sitter-hl-face:variable ((t ())))
-   `(tree-sitter-hl-face:variable.parameter ((t ())))
-   `(tree-sitter-hl-face:variable.builtin ((t ())))
-   `(tree-sitter-hl-face:variable.special ((t ())))
-   `(tree-sitter-hl-face:property ((t ())))
-   `(tree-sitter-hl-face:property.definition ((t ())))
-   `(tree-sitter-hl-face:comment ((t (:foreground ,claret))))
-   ;;
-   `(tree-sitter-hl-face:doc ((t (:foreground ,doc))))
-   `(tree-sitter-hl-face:string ((t (:foreground ,teal))))
-   ;;
-   `(tree-sitter-hl-face:string.special ((t (:foreground ,teal))))
-   ;;
-   `(tree-sitter-hl-face:escape ((t ())))
-   `(tree-sitter-hl-face:embedded ((t ())))
-   ;;
-   `(tree-sitter-hl-face:keyword ((t ())))
-   ;;
-   `(tree-sitter-hl-face:function ((t (:foreground ,oxford))))
-   `(tree-sitter-hl-face:function.builtin ((t ())))
-   `(tree-sitter-hl-face:function.call ((t ())))
-   `(tree-sitter-hl-face:function.macro ((t (:foreground ,velvet))))
-   `(tree-sitter-hl-face:function.method ((t ())))
-   `(tree-sitter-hl-face:function.method.call ((t ())))
-   `(tree-sitter-hl-face:function.special ((t ())))
-
-   `(tree-sitter-hl-face:method ((t ())))
-   `(tree-sitter-hl-face:method.call ((t ())))
-   `(tree-sitter-hl-face:operator ((t ())))
-   `(tree-sitter-hl-face:punctuation ((t ())))
-   `(tree-sitter-hl-face:punctuation.bracket ((t (:foreground ,cm))))
-   `(tree-sitter-hl-face:punctuation.delimiter ((t ())))
-   `(tree-sitter-hl-face:punctuation.special ((t ())))
-   ;; dim
-   `(tree-sitter-hl-face:label ((t ())))
-   `(tree-sitter-hl-face:constant ((t ())))
-   `(tree-sitter-hl-face:constant.builtin ((t (:foreground ,velvet))))
-   ;;
-   `(tree-sitter-hl-face:number ((t (:foreground ,velvet))))
-   `(tree-sitter-hl-face:tag ((t ())))
-   `(tree-sitter-hl-face:attribute ((t ())))))
+   `(which-key-local-map-description-face   ((t :foreground ,oxford)))))
 
 (and load-file-name
      (boundp 'custom-theme-load-path)
