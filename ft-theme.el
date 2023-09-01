@@ -357,12 +357,7 @@
    `(lsp-face-semhl-struct ((t ())))
    `(lsp-face-semhl-type ((t ())))
    `(lsp-face-semhl-type-parameter ((t ())))
-   `(lsp-face-semhl-variable ((t ())))
-
-   ;; which-key
-   `(which-key-command-description-face     ((t :foreground ,oxford)))
-   `(which-key-highlighted-command-face     ((t :foreground ,oxford)))
-   `(which-key-local-map-description-face   ((t :foreground ,oxford)))))
+   `(lsp-face-semhl-variable ((t ())))))
 
 (and load-file-name
      (boundp 'custom-theme-load-path)
