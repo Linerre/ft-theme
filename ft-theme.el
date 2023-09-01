@@ -12,6 +12,9 @@
   "Scales for headers.")
 
 (let (;; primary
+      (black     "#000000")             ; keyword
+      (fg        "#4F4A4A")             ; fg
+      (bg        "#FFF1E5")
       (white     "#FFFFFF")             ; bg
       (black     "#000000")
       (black70   "#4D4845")
@@ -25,7 +28,6 @@
       (oxford    "#0F5499")             ; ft-blue
       (slate     "#262A33")             ; ft-dark-grey
       (paper     "#FFF1E5")             ; ft-paper-background
-      (bg        "#EEEEEC")             ; ft-paper but more white
       (crimson   "#CC0000")             ;
       (matisse   "#355778")
       ;; from ft print
@@ -66,18 +68,18 @@
   (custom-theme-set-faces
    'ft
    `(default                    ((((type tty)))
-                                (((type graphic)) :background ,bg :foreground ,black70)))
+                                (((type graphic)) :background ,bg :foreground ,fg)))
    ;; Basics
    `(cursor                      ((t (:background ,cur))))
    `(region                      ((t (:background ,select :extend nil))))
    `(hl-line                     ((t (:background ,ssel))))
    `(fringe                      ((t (:background ,bg))))
    `(show-paren-match            ((t (:background ,cyellow :box (:line-width (-1 . -1) :style nil)))))
-   `(highlight                   ((t (:background ,select :foreground ,black))))
+   `(highlight                   ((t (:background ,select :foreground ,fg))))
    `(button                      ((t (:box (:line-width (-1 . -1) :color ,teal)))))
    `(vertical-border             ((t ())))
    `(italic                      ((t (:slant italic :underline nil))))
-   `(line-number-current-line    ((t (:foreground ,black :background ,hl))))
+   `(line-number-current-line    ((t (:foreground ,fg :background ,hl))))
    `(completions-common-part     ((t (:bold t))))
    `(minibuffer-prompt           ((t ())))
    `(lazy-highlight              ((t (:foreground ,lh :underline t))))
@@ -97,7 +99,7 @@
    ;; `(line-number                    ((t (:foreground ,cm))))
 
    ;; ISearch
-   `(isearch                        ((t (:background ,select :foreground ,black))))
+   `(isearch                        ((t (:background ,select :foreground ,fg))))
    `(isearch-fail                   ((t (:background ,rmbg :foreground ,claret))))
    `(isearch-group-1                ((t (:background ,redbg :foreground ,white))))
    `(isearch-group-2                ((t (:background ,bluebg :foreground ,white))))
@@ -105,7 +107,7 @@
    ;; Font Locks
    `(font-lock-comment-face           ((t (:foreground ,claret))))
    `(font-lock-comment-delimiter-face ((t (:foreground ,claret))))
-   `(font-lock-delimiter-face         ((t (:foreground "#66605C"))))  ; 70% of black
+   `(font-lock-delimiter-face         ((t (:foreground ,fg))))  ; 70% of black
    `(font-lock-string-face            ((t (:foreground ,teal))))
    `(font-lock-doc-face               ((t (:foreground ,bblue))))
    `(font-lock-bracket-face           ((t (:foreground "#66605C"))))
@@ -136,7 +138,7 @@
    `(header-line-inactive           ((t ())))
 
    ;; Yasnippet
-   `(yas-field-highlight-face       ((t (:background ,ssel :foreground ,black))))
+   `(yas-field-highlight-face       ((t (:background ,ssel :foreground ,fg))))
    `(yascroll:thumb-fringe          ((t (:foreground ,cm :background ,cm))))
    `(yascroll:thumb-text-area       ((t (:foreground ,cm :background ,cm))))
 
@@ -168,7 +170,7 @@
    `(orderless-match-face-0  ((t (:foreground ,oxford40))))
    `(orderless-match-face-1  ((t (:foreground ,claret))))
    `(orderless-match-face-2  ((t (:foreground ,ssel))))
-   `(orderless-match-face-3  ((t (:foreground ,black))))
+   `(orderless-match-face-3  ((t (:foreground ,fg))))
 
    ;; Vundo
    `(vundo-highlight  ((t (:foreground ,hl))))
@@ -209,8 +211,8 @@
    `(magit-diff-removed-highlight      ((t (:background ,rmbg :foreground ,rmfg))))
    `(magit-diff-added                  ((t (:background ,adbg :foreground "gray50"))))
    `(magit-diff-added-highlight        ((t (:background ,adbg :foreground ,adfg))))
-   `(magit-diff-context-highlight      ((t (:background ,paper foreground ,black))))
-   `(magit-diff-whitespace-warning     ((t (:foreground ,black))))
+   `(magit-diff-context-highlight      ((t (:background ,paper foreground ,fg))))
+   `(magit-diff-whitespace-warning     ((t (:foreground ,fg))))
    `(magit-reflog-cherry-pick          ((t (:foreground ,teal))))
    `(magit-reflog-checkout             ((t (:foreground ,teal))))
    `(magit-reflog-merge                ((t (:foreground ,teal))))
@@ -224,7 +226,7 @@
    ;; Diff-hl
    `(diff-hl-insert                 ((t (:foreground ,cm :background ,cm))))
    `(diff-hl-change                 ((t (:foreground ,hl :background ,hl))))
-   `(diff-hl-delete                 ((t (:foreground ,black background ,paper))))
+   `(diff-hl-delete                 ((t (:foreground ,fg background ,paper))))
    `(diff-error                     ((t (:foreground ,crimson))))
 
    `(eshell-prompt                  ((t (:bold t))))
@@ -280,7 +282,7 @@
    `(org-document-title        ((t (:bold t :height ,(nth 0 theme-header-scale)))))
    `(org-link                  ((t (:foreground ,sblue :underline t))))
    `(org-level-1               ((t (:foreground ,black :bold t))))
-   `(org-level-2               ((t (:foreground ,black))))
+   `(org-level-2               ((t (:foreground ,fg))))
    `(org-level-3               ((t (:foreground ,cm))))
    `(org-level-4               ((t ())))
    `(org-level-5               ((t ())))
@@ -297,7 +299,7 @@
    `(org-block-end-line        ((t (:foreground ,white :background ,sgrey :family "Monospace" :font "Monospace" :bold t :extend t))))
 
    `(fill-column-indicator          ((t (:foreground ,cm))))
-   `(scroll-bar                     ((t (:foreground ,black))))
+   `(scroll-bar                     ((t (:foreground ,fg))))
    `(parenthesis                    ((t (:foreground ,cm))))
    `(eldoc-box-body                 ((t (:background ,tgrey :inherit default))))
 
@@ -317,15 +319,45 @@
    `(erc-input-face                 ((t (:inherit font-lock-function-name-face))))
    `(erc-timestamp-face             ((t (:inherit font-lock-constant-face))))
    `(erc-notice-face                ((t (:inherit font-lock-comment-face))))
-   `(lsp-modeline-code-actions-face ((t (:eground ,black))))
-   `(lsp-modeline-code-actions-preferred-face ((t (:foreground ,teal))))
    ;; tab bar
-   `(tab-bar                        ((t (:background ,paper foreground ,black))))
+   `(tab-bar                        ((t (:background ,paper foreground ,fg))))
    `(tab-bar-tab                    ((t (:inverse-video t :bold t))))
    `(tab-bar-tab-inactive           ((t ())))
    `(ansi-color-blue                ((t (:foreground ,oxford))))
    `(ansi-color-bright-blue         ((t (:foreground ,select))))
    `(embark-keybinding              ((t (:inherit font-lock-constant-face))))
+
+   ;; lsp: disable all lsp syntax highlighting
+   ;; https://emacs-lsp.github.io/lsp-mode/page/settings/semantic-tokens/
+   `(lsp-modeline-code-actions-face ((t (:foreground ,fg))))
+   `(lsp-modeline-code-actions-preferred-face ((t (:foreground ,teal))))
+   `(lsp-face-semhl-comment ((t ())))
+   `(lsp-face-semhl-constant ((t ())))
+   `(lsp-face-semhl-default-library ((t ())))
+   `(lsp-face-semhl-definition ((t ())))
+   ;; `(lsp-face-semhl-deprecated ((t ())))
+   `(lsp-face-semhl-enum ((t ())))
+   `(lsp-face-semhl-event ((t ())))
+   `(lsp-face-semhl-function ((t ())))
+   `(lsp-face-semhl-implemntation ((t ())))
+   `(lsp-face-semhl-interface ((t ())))
+   `(lsp-face-semhl-keyword ((t ())))
+   `(lsp-face-semhl-label ((t ())))
+   `(lsp-face-semhl-macro ((t ())))
+   `(lsp-face-semhl-member ((t ())))
+   `(lsp-face-semhl-method ((t ())))
+   `(lsp-face-semhl-namespace ((t ())))
+   `(lsp-face-semhl-number ((t ())))
+   `(lsp-face-semhl-operator ((t ())))
+   `(lsp-face-semhl-parameter ((t ())))
+   `(lsp-face-semhl-property ((t ())))
+   `(lsp-face-semhl-regexp ((t ())))
+   `(lsp-face-semhl-static ((t ())))
+   `(lsp-face-semhl-string ((t ())))
+   `(lsp-face-semhl-struct ((t ())))
+   `(lsp-face-semhl-type ((t ())))
+   `(lsp-face-semhl-type-parameter ((t ())))
+   `(lsp-face-semhl-variable ((t ())))
 
    ;; which-key
    `(which-key-command-description-face     ((t :foreground ,oxford)))
