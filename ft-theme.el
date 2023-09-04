@@ -21,13 +21,12 @@
       (ft-pink   "#FCD0B1")             ; darker bg that paper below
       (ft-grey   "#333333")
 
-      ;; secondary palette
+
       ;; provide visual hierarchy to differentiate content and are brand identifiers of the FT
-      (claret    "#990F3D")             ; ft-red
+      (claret    "#990F3D")            ; ft-red
       (teal      "#0D7680")             ; ft-green for string
       (oxford    "#0F5499")             ; ft-blue
       (slate     "#262A33")             ; ft-dark-grey
-      (paper     "#FFF1E5")             ; ft-paper-background
       (crimson   "#CC0000")             ;
       (matisse   "#355778")
       ;; from ft print
@@ -132,8 +131,8 @@
 
    ;; Mode Line
    `(tab-line                       ((t ())))
-   `(mode-line                      ((t (:background ,black :foreground ,paper))))
-   `(mode-line-inactive             ((t (:background ,paper :foreground ,ft-grey))))
+   `(mode-line                      ((t (:background ,black :foreground ,bg))))
+   `(mode-line-inactive             ((t (:background ,"#F2DFCE" :foreground ,ft-grey))))
    `(header-line                    ((t ())))
    `(header-line-inactive           ((t ())))
 
@@ -211,7 +210,7 @@
    `(magit-diff-removed-highlight      ((t (:background ,rmbg :foreground ,rmfg))))
    `(magit-diff-added                  ((t (:background ,adbg :foreground "gray50"))))
    `(magit-diff-added-highlight        ((t (:background ,adbg :foreground ,adfg))))
-   `(magit-diff-context-highlight      ((t (:background ,paper foreground ,fg))))
+   `(magit-diff-context-highlight      ((t (:background ,bg :foreground ,fg))))
    `(magit-diff-whitespace-warning     ((t (:foreground ,fg))))
    `(magit-reflog-cherry-pick          ((t (:foreground ,teal))))
    `(magit-reflog-checkout             ((t (:foreground ,teal))))
@@ -226,7 +225,7 @@
    ;; Diff-hl
    `(diff-hl-insert                 ((t (:foreground ,cm :background ,cm))))
    `(diff-hl-change                 ((t (:foreground ,hl :background ,hl))))
-   `(diff-hl-delete                 ((t (:foreground ,fg background ,paper))))
+   `(diff-hl-delete                 ((t (:foreground ,fg :background ,bg))))
    `(diff-error                     ((t (:foreground ,crimson))))
 
    `(eshell-prompt                  ((t (:bold t))))
@@ -320,7 +319,7 @@
    `(erc-timestamp-face             ((t (:inherit font-lock-constant-face))))
    `(erc-notice-face                ((t (:inherit font-lock-comment-face))))
    ;; tab bar
-   `(tab-bar                        ((t (:background ,paper foreground ,fg))))
+   `(tab-bar                        ((t (:background ,bg :foreground ,fg))))
    `(tab-bar-tab                    ((t (:inverse-video t :bold t))))
    `(tab-bar-tab-inactive           ((t ())))
    `(ansi-color-blue                ((t (:foreground ,oxford))))
