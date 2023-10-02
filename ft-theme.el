@@ -33,6 +33,7 @@
       (bblue     "#0783BA")             ; bottom blue in graphics
       (sblue     "#66A1C6")             ; blue used for section title
       (hblue     "#1479A1")             ; high contrast blue used for banner; fg should be white
+      (gd-blue   "#006F9B")             ; graphic-dark-blue
       (cyellow   "#D3B73F")             ; yellow used in comparision with blue
       (sgrey     "#929397")             ; grey used for section header bg
       (select    "#B6CCC7")             ; 40% of teal
@@ -289,19 +290,20 @@
    `(org-level-7               ((t ())))
    `(org-todo                  ((t (:foreground ,crimson :bold t))))
    `(org-block                 ((t ())))
-   `(org-code                  ((t (:background ,shblue :foreground ,shblack))))
+   `(org-code                  ((t (:foreground ,gd-blue))))
    `(org-property-value        ((t (:inherit nil))))
    `(org-drawer                ((t (:foreground ,matisse))))
+   `(org-date                  ((t (:foreground ,velvet))))
+   `(org-footnote              ((t (:foreground ,oxford))))
    `(org-quote                 ((t (:extend t))))
    `(org-verse                 ((t (:extend t))))
-   `(org-block-begin-line      ((t (:foreground ,white :background ,sgrey :family "Monospace" :font "Monospace" :bold t :extend t))))
-   `(org-block-end-line        ((t (:foreground ,white :background ,sgrey :family "Monospace" :font "Monospace" :bold t :extend t))))
+   `(org-block-begin-line      ((t (:foreground ,sgrey))))
+   `(org-block-end-line        ((t (:foreground ,sgrey))))
 
    `(fill-column-indicator          ((t (:foreground ,cm))))
    `(scroll-bar                     ((t (:foreground ,fg))))
    `(parenthesis                    ((t (:foreground ,cm))))
    `(eldoc-box-body                 ((t (:background ,tgrey :inherit default))))
-
    `(flycheck-fringe-warning        ((t (:foreground ,cyellow))))
    `(flycheck-warning               ((t (:underline (:style wave :color ,hl)))))
    `(flycheck-info                  ((t (:underline (:style wave :color ,cyellow)))))
@@ -311,13 +313,12 @@
    `(flymake-warning                ((t (:underline (:style wave :color ,hl)))))
    `(flymake-error                  ((t (:underline (:style wave :color ,claret)))))
    `(flymake-note                   ((t (:underline (:style wave :color ,cm)))))
-
    `(wgrep-face                     ((t (:underline ,velvet))))
-
    `(erc-nick-default-face          ((t (:inherit font-lock-keyword-face))))
    `(erc-input-face                 ((t (:inherit font-lock-function-name-face))))
    `(erc-timestamp-face             ((t (:inherit font-lock-constant-face))))
    `(erc-notice-face                ((t (:inherit font-lock-comment-face))))
+
    ;; tab bar
    `(tab-bar                        ((t (:background ,bg :foreground ,fg))))
    `(tab-bar-tab                    ((t (:inverse-video t :bold t))))
