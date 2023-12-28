@@ -12,12 +12,13 @@
   "Scales for headers.")
 
 (let (;; primary
-      (black     "#000000")             ; keyword
+      (black     "#33302E")             ; keyword
       (fg        "#4F4A4A")             ; fg
       (bg        "#FFF1E5")
       (white     "#FFFFFF")             ; bg
       (black     "#000000")
       (black70   "#4D4845")
+      (black60   "#66605C")
       (ft-pink   "#FCD0B1")             ; darker bg that paper below
       (ft-grey   "#333333")
 
@@ -111,7 +112,7 @@
    `(font-lock-delimiter-face         ((t (:foreground ,fg))))  ; 70% of black
    `(font-lock-string-face            ((t (:foreground ,teal))))
    `(font-lock-doc-face               ((t (:foreground ,bblue))))
-   `(font-lock-bracket-face           ((t (:foreground "#66605C"))))
+   `(font-lock-bracket-face           ((t (:foreground ,black60))))
    `(font-lock-builtin-face           ((t ())))
    `(font-lock-type-face              ((t ())))
    `(font-lock-variable-name-face     ((t ())))
@@ -119,7 +120,7 @@
    `(font-lock-constant-face          ((t (:foreground ,velvet))))
    `(font-lock-function-name-face     ((t (:foreground ,oxford))))
    `(font-lock-warning-face           ((t (:bold t))))
-   `(font-lock-preprocessor-face      ((t (:foreground "#66605C"))))
+   `(font-lock-preprocessor-face      ((t (:foreground ,black60))))
    `(font-lock-number-face            ((t (:foreground ,velvet))))
    `(highlight-numbers-number         ((t (:foreground ,velvet))))
 
@@ -281,6 +282,7 @@
 
    ;; Org-mode
    `(org-document-title        ((t (:bold t :height ,(nth 0 theme-header-scale)))))
+   `(org-document-info         ((t (:foreground ,black60))))
    `(org-link                  ((t (:foreground ,sblue :underline t))))
    `(org-level-1               ((t (:foreground ,black :bold t))))
    `(org-level-2               ((t (:foreground ,fg))))
@@ -294,6 +296,7 @@
    `(org-code                  ((t (:foreground ,gd-blue))))
    `(org-property-value        ((t (:inherit nil))))
    `(org-drawer                ((t (:foreground ,matisse))))
+   `(org-table                 ((t (:foreground ,gd-blue))))
    `(org-date                  ((t (:foreground ,velvet))))
    `(org-footnote              ((t (:foreground ,oxford))))
    `(org-quote                 ((t (:extend t))))
@@ -358,7 +361,8 @@
    `(lsp-face-semhl-struct ((t ())))
    `(lsp-face-semhl-type ((t ())))
    `(lsp-face-semhl-type-parameter ((t ())))
-   `(lsp-face-semhl-variable ((t ())))))
+   `(lsp-face-semhl-variable ((t ())))
+   ))
 
 (and load-file-name
      (boundp 'custom-theme-load-path)
