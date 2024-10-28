@@ -2,7 +2,9 @@
 ;;; Commentary:
 
 ;;; Version: 0.1.0
-;;; Main Source: https://registry.origami.ft.com/components/o-colors@6.5.1
+;;; Main Source:
+;;; 1. https://registry.origami.ft.com/components/o-colors@6.5.1
+;;; 2. https://origami-beta.ft.com/guides/colours/
 ;;; Code:
 
 (deftheme ft
@@ -14,23 +16,24 @@
 (let (;; primary
       (black     "#33302E")             ; keyword
       (fg        "#4F4A4A")             ; fg
-      (bg        "#FFF1E5")
+      (bg        "#FFF1E5")             ; ft-paper
       (white     "#FFFFFF")             ; bg
       (black     "#000000")
       (black70   "#4D4845")
       (black60   "#66605C")
-      (ft-pink   "#FCD0B1")             ; darker bg that paper below
+      (ft-pink   "#FCD0B1")             ; darker than paper, used for FT logo
       (ft-grey   "#333333")
 
 
-      ;; provide visual hierarchy to differentiate content and are brand identifiers of the FT
-      (claret    "#990F3D")            ; ft-red
+      ;; secondary visual hierarchy to differentiate content and are brand identifiers of the FT
+      (claret    "#990F3D")             ; ft-red
       (teal      "#0D7680")             ; ft-green for string
       (oxford    "#0F5499")             ; ft-blue
       (slate     "#262A33")             ; ft-dark-grey
       (crimson   "#CC0000")             ;
       (matisse   "#355778")
       ;; from ft print
+      (gdblue    "#006F9B")             ; graphics dark blue
       (bblue     "#0783BA")             ; bottom blue in graphics
       (sblue     "#66A1C6")             ; blue used for section title
       (hblue     "#1479A1")             ; high contrast blue used for banner; fg should be white
@@ -47,10 +50,11 @@
       (bluebg    "#5999B3")             ; blue bg used with white fg
       (shblue    "#B6CEDF")             ; section light blue bg used with fg bleow
       (shblack   "#231F20")
-      ;;teriary palette
+      ;;tertiary palette
       ;; Used sparingly, these colors provide contrast for highlighting and messaging.
       (bullet    "#F26638")             ; used for bullet point
       (light-blue "#00A0DD")
+      (mtblue    "#355778")             ; matisse-blue
       (velvet    "#593380")             ; purple
       (crimson   "#CC0000")             ; high-contrast red
 
@@ -64,7 +68,7 @@
       (lh        "#0DA59B")
       (cur       "#363636")
       (doc       "#2D97A1")             ; docs: cyan
-      (hl        "#FFBC5D"))            ; highlight: orange
+      (hl        "#FFBC5D"))            ; highlight: mandarin (orange)
 
   (custom-theme-set-faces
    'ft
@@ -112,7 +116,7 @@
    `(font-lock-builtin-face           ((t (:foreground ,velvet))))
    `(font-lock-delimiter-face         ((t (:foreground ,fg))))  ; 70% of black
    `(font-lock-string-face            ((t (:foreground ,teal))))
-   `(font-lock-doc-face               ((t (:foreground ,bblue))))
+   `(font-lock-doc-face               ((t (:foreground ,gdblue))))
    `(font-lock-bracket-face           ((t (:foreground ,black60))))
    `(font-lock-builtin-face           ((t ())))
    `(font-lock-type-face              ((t ())))
