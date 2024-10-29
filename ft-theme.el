@@ -59,6 +59,7 @@
       (crimson   "#CC0000")             ; high-contrast red
 
       ;; lighter variantions of the above, prefiex with `l'
+      (muted-txt "#807973")            ; less prominent, e.g. credits and captions
       (ghblue    "#DFF7FF")            ; secondary selection, session background
       (adfg      "#00572C")            ; git added text/fg color
       (adbg      "#CCDFC7")            ; git added bg color
@@ -85,7 +86,8 @@
    `(button                      ((t (:inherit link))))
    `(vertical-border             ((t ())))
    `(italic                      ((t (:slant italic :underline nil))))
-   `(line-number-current-line    ((t (:foreground ,fg :background ,hl))))
+   `(line-number                 ((t (:inherit default :foreground ,muted-txt))))
+   `(line-number-current-line    ((t (:inherit default :background ,hl))))
    `(completions-common-part     ((t (:bold t))))
    `(minibuffer-prompt           ((t ())))
    `(lazy-highlight              ((t (:foreground ,lh :underline t))))
