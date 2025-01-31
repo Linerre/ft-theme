@@ -16,20 +16,20 @@
 (let (;; primary
       (black     "#33302E")             ; keyword
       (fg        "#4F4A4A")             ; fg
-      (bg        "#FFF1E5")             ; ft-paper
-      (white     "#FFFFFF")             ; bg
       (black     "#000000")
       (black70   "#4D4845")
       (black60   "#66605C")
       (ft-pink   "#FCD0B1")             ; darker than paper, used for FT logo
       (ft-grey   "#333333")
+      (white     "#FFFFFF")
 
 
       ;; secondary visual hierarchy to differentiate content and are brand identifiers of the FT
       (claret    "#990F3D")             ; ft-red
       (teal      "#0D7680")             ; ft-green for string
       (oxford    "#0F5499")             ; ft-blue
-      (slate     "#262A33")             ; ft-dark-grey
+      (paper     "#fff1e5")             ; FT’s main background colour
+      (slate     "#262A33")             ; warmer version of black
       (crimson   "#CC0000")             ;
       (matisse   "#355778")
       ;; from ft print
@@ -52,13 +52,17 @@
       (shblack   "#231F20")
       ;;tertiary palette
       ;; Used sparingly, these colors provide contrast for highlighting and messaging.
-      (bullet    "#F26638")             ; used for bullet point
-      (light-blue "#00A0DD")
+      (bullet    "#f26638")             ; used for bullet point
+      (candy     "#ff7faa")             ; light purple
+      (crimson   "#cc0000")             ; high-contrast red
+      (graphics-dark-blue "#006f9b")
+      (light-blue "#00a0dd")
+      (jade      "#00994d")             ; dark green
       (mtblue    "#355778")             ; matisse-blue
       (velvet    "#593380")             ; purple
-      (crimson   "#CC0000")             ; high-contrast red
-
-      ;; lighter variantions of the above, prefiex with `l'
+      (wasabi    "#96cc28")             ; light green
+      (wheat     "#f2dfce")             ; pale paper pink
+      ;; lighter variantions of the above, prefiexd with `l'
       (muted-txt "#807973")            ; less prominent, e.g. credits and captions
       (ghblue    "#DFF7FF")            ; secondary selection, session background
       (adfg      "#00572C")            ; git added text/fg color
@@ -73,13 +77,13 @@
 
   (custom-theme-set-faces
    'ft
-   `(default                    ((((type tty)))
-                                (((type graphic)) :background ,bg :foreground ,fg)))
+   `(default               ((((type tty)))
+                           (((type graphic)) :background ,paper :foreground ,slate)))
    ;; Basics
    `(cursor                      ((t (:background ,cur))))
    `(region                      ((t (:background ,select :extend nil))))
    `(hl-line                     ((t (:background ,ssel))))
-   `(fringe                      ((t (:background ,bg))))
+   `(fringe                      ((t (:background ,paper))))
    `(show-paren-match            ((t (:background ,cyellow :box (:line-width (-1 . -1) :style nil)))))
    `(highlight                   ((t (:background ,select :foreground ,fg))))
    `(link                        ((t (:foreground ,teal :underline (:color "#9EC0BD" :style line)))))
@@ -141,7 +145,7 @@
 
    ;; Mode Line
    `(tab-line                       ((t ())))
-   `(mode-line                      ((t (:background ,black :foreground ,bg))))
+   `(mode-line                      ((t (:background ,black :foreground ,paper))))
    `(mode-line-inactive             ((t (:background ,"#F2DFCE" :foreground ,ft-grey))))
    `(header-line                    ((t ())))
    `(header-line-inactive           ((t ())))
@@ -220,7 +224,7 @@
    `(magit-diff-removed-highlight      ((t (:background ,rmbg :foreground ,rmfg))))
    `(magit-diff-added                  ((t (:background ,adbg :foreground "gray50"))))
    `(magit-diff-added-highlight        ((t (:background ,adbg :foreground ,adfg))))
-   `(magit-diff-context-highlight      ((t (:background ,bg :foreground ,fg))))
+   `(magit-diff-context-highlight      ((t (:background ,paper :foreground ,fg))))
    `(magit-diff-whitespace-warning     ((t (:foreground ,fg))))
    `(magit-reflog-cherry-pick          ((t (:foreground ,teal))))
    `(magit-reflog-checkout             ((t (:foreground ,teal))))
@@ -235,7 +239,7 @@
    ;; Diff-hl
    `(diff-hl-insert                 ((t (:foreground ,cm :background ,cm))))
    `(diff-hl-change                 ((t (:foreground ,hl :background ,hl))))
-   `(diff-hl-delete                 ((t (:foreground ,fg :background ,bg))))
+   `(diff-hl-delete                 ((t (:foreground ,fg :background ,paper))))
    `(diff-error                     ((t (:foreground ,crimson))))
 
    `(eshell-prompt                  ((t (:bold t))))
@@ -331,7 +335,7 @@
    `(erc-notice-face                ((t (:inherit font-lock-comment-face))))
 
    ;; tab bar
-   `(tab-bar                        ((t (:background ,bg :foreground ,fg))))
+   `(tab-bar                        ((t (:background ,paper :foreground ,fg))))
    `(tab-bar-tab                    ((t (:inverse-video t :bold t))))
    `(tab-bar-tab-inactive           ((t ())))
    `(ansi-color-blue                ((t (:foreground ,oxford))))
